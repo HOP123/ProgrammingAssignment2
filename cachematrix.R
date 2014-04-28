@@ -4,6 +4,9 @@
 ## Write a short comment describing this function
 
 
+## makeCacheMatrix function returns lists of 4 following functions 
+## set, get setInvers and getInverse
+
 makeCacheMatrix <- function(x) {
 	#x <- matrix
 	x <- x
@@ -30,7 +33,7 @@ makeCacheMatrix <- function(x) {
 	
 	## setInverse function calculates inverse matrix 
 	setInverse <- function(y=x){
-		print("came to setInverse")
+# 		print("came to setInverse")
 		if(nrow(y) == ncol(y)){
 			z <<- solve(y)
 			print(z)
@@ -40,14 +43,12 @@ makeCacheMatrix <- function(x) {
 	
 	## getInverse function prints the inverse matrix
 	getInverse <- function(){
-		print("came to getInverse")
-		print(z)
+# 		print("came to getInverse")
+# 		print(z)
 		return (z)
 	}
 	return (list(set=set, get=get, setInverse=setInverse, getInverse=getInverse))
 }
-
-
 
 
 ## Write a short comment describing this function
