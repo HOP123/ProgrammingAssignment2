@@ -4,6 +4,9 @@
 ## Write a short comment describing this function
 
 
+### Put comments here that give an overall description of what your
+## functions do
+
 ## makeCacheMatrix function returns lists of 4 following functions 
 ## set, get setInvers and getInverse
 
@@ -36,7 +39,7 @@ makeCacheMatrix <- function(x) {
 # 		print("came to setInverse")
 		if(nrow(y) == ncol(y)){
 			z <<- solve(y)
-			print(z)
+# 			print(z)
 		}
 		else {print("No inverse")}
 	}
@@ -49,10 +52,18 @@ makeCacheMatrix <- function(x) {
 	}
 	return (list(set=set, get=get, setInverse=setInverse, getInverse=getInverse))
 }
-
-
 ## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+	m <- matrix()
+	m <- x$getInverse()
+	if(!is.null(m)){
+			message("getting cashed data")
+			return(m)
+	}
+	data <- x$get()
+	m <- solve(data)
+	return (m)
 }
+
